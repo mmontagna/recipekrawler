@@ -25,7 +25,7 @@ def extract_unit(ingredient):
         return i, word
     except Exception:
       pass
-  return i, None
+  return 0, None
 
 if __name__ == "__main__":
   parser = argparse.ArgumentParser(description='')
@@ -48,14 +48,14 @@ if __name__ == "__main__":
           instructions = [x for x in instructions if x.lower() not in ('advertisement') and x]
 
           ingredients = recipe['ingredients']
-          recipe['ingredients'] = []
+          recipe['processed_ingredients'] = []
 
           for i in range(len(ingredients)):
             ingredient = ingredients[i]
             x, qnt = extract_quantity(ingredient)
             y, unit = extract_unit(ingredient)
 
-            recipe['ingredients'].append({
+            recipe['processed_ingredients'].append({
               'quantity': qnt,
               'unit': unit,
               'item': ingredient[max(y,x):]
