@@ -1,0 +1,1 @@
+kscrawl @ git+ssh://git@github.com/mmontagna/kscrawl.git@e9d5cc561c79ad7480e76180471bfaf352b7a08f

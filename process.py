@@ -61,7 +61,6 @@ if __name__ == "__main__":
               'item': ingredient[max(y,x):]
             })
 
-          print recipe
           wf.write(json.dumps(recipe).encode('utf8'))
 
         else:
