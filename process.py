@@ -58,11 +58,10 @@ if __name__ == "__main__":
             recipe['processed_ingredients'].append({
               'quantity': qnt,
               'unit': unit,
-              'item': ingredient[max(y,x):]
+              'item': ingredient[max(y,x):].strip()
             })
 
-          wf.write(json.dumps(recipe).encode('utf8'))
+          wf.write(json.dumps(recipe).encode('utf8') + "\n")
 
         else:
           print("dupe", recipe['title'])
-        print("\n-----\n")
